@@ -1,4 +1,6 @@
+import Admin from "./Admin";
 import { useState, useEffect } from "react";
+import Admin from "./Admin";
 
 const BACKEND_URL = "https://cold-mail-backend-ud8p.onrender.com";
 
@@ -84,6 +86,11 @@ export default function App() {
     } catch (e) { alert("Error: " + e.message); }
     setLoading(false); setMessage("");
   };
+
+  // Show admin page if URL has ?admin=1
+  if (window.location.search.includes("admin=1")) {
+    return <Admin />;
+  }
 
   return (
     <div style={{ minHeight: "100vh", background: "#f0f4f8", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "sans-serif", padding: 20 }}>
