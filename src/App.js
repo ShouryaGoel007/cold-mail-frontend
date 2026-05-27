@@ -13,6 +13,7 @@ export default function App() {
   const [resume, setResume] = useState(null);
   const [emailPreview, setEmailPreview] = useState(null);
   const [hrEmail, setHrEmail] = useState("");
+  const [companyDomain, setCompanyDomain] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -57,7 +58,7 @@ export default function App() {
       const res = await fetch(`${BACKEND_URL}/generate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ linkedin_url: linkedinUrl, hr_name: hrName, user_profile: userProfile })
+        body: JSON.stringify({ linkedin_url: linkedinUrl, hr_name: hrName, user_profile: userProfile, company_domain: companyDomain })
       });
       const data = await res.json();
       if (data.success) { setEmailPreview(data); setHrEmail(data.hr_email || ""); setStep(2); }
