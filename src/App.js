@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 
-const BACKEND_URL = "https://your-railway-url.up.railway.app";
+const BACKEND_URL = "https://cold-mail-backend-ud8p.onrender.com";
 // ☝️ You will update this after deploying backend
 
 export default function App() {
