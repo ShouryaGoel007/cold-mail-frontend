@@ -1,4 +1,3 @@
-import Admin from "./Admin";
 import { useState, useEffect } from "react";
 import Admin from "./Admin";
 
